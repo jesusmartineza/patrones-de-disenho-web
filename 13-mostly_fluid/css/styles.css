@@ -1,0 +1,66 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196f3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/** MOSTLY FLUID (Todo sea mas fluido con nuestros elementos) CON CSS **/
+
+/* Esto nos ayuda a tener un contenido centrado y se de manera fluida no se recomienda colocar un valor fijo por ejemplo width: 1200px; width: 120rem; es mejor usar valores en porcetajes por ejemplo width: 95%; y esto no ayudara que el contenido sea fluido en todo tipo de pantalla y solo en caso de mejorar el los elementos para tengan un mejor fluido se puede conbinar el width: 120rem;*/
+.contenedor {
+    max-width: 120rem;
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* Y si quieres darle ser detallista se pueden usar media queries para que a ciertas pantallas pueda tener un por mas de margen a los costados */
+
+@media (min-width: 768px) {
+    .contenedor {
+        width: 80%;
+    }
+}
+
+@media (min-width: 992px) {
+    .contenedor {
+        width: 60%;
+    }
+}
+
+/* En el caso de imagenes existen varias maneras pero se recomienda usar max-width: 100%; y esto mas que nada por que ayuda a la imagen en dado caso que imagen no se tan grande no se deforme por tratar de ajustarse a la pantalla y para que tome el ancho de la pantalla donde se este visualizando */
+
+img {
+    max-width: 100%;
+}

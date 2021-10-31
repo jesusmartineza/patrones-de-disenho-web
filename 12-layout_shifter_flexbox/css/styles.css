@@ -1,0 +1,86 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196f3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/** LAYOUT SHIFTER (Cambio de Diseño) CON FLEXBOX CON 3 ELEMENTOS **/
+@media (min-width: 768px) {
+    .layout-shifter {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .contenido-principal {
+        display: flex;
+        /* gap: 2rem; En caso de que safari e ios movil ya tengan soporte se puede usar este gap para dar espacio entre columnas */
+    }
+
+    .entrada-blog {
+        flex: 0 0 calc(50% - 2rem); /* Mientras safari e ios no soporten gap se puede usar esta linea de codigo */
+    }
+}
+
+@media (min-width: 992px) {
+    .layout-shifter {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contenido-principal {
+        flex: 0 0 calc(66.6% - 2rem); /* Ambos 0 se refieren al crecimiento del elemento y el calc se refiere a espacio que tomaran de un 100% mas cuanto tendran de espacio entre columnas  */
+        flex-wrap: wrap;
+    }
+
+    .sidebar {
+        order: 2;
+        flex: 0 0 calc(33.3% - 2rem);
+    }
+
+    .entrada-blog {
+        flex: 0 0 100%; /* Añadiendo un wrap en la clase padre en sus clases hijos podemos usar un 100% para puedan tomar el ancho de la columna */
+    }
+}
